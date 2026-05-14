@@ -1,0 +1,29 @@
+** sch_path: /foss/designs/DSRT/tugas1.sch
+**.subckt tugas1
+XM1 out in 0 0 sky130_fd_pr__nfet_01v8 L=0.15 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0 sd=0 mult=1
+XM2 out in net1 net1 sky130_fd_pr__pfet_01v8 L=0.15 W=12 nf=1 ad=3.48 as=3.48 pd=24.58 ps=24.58 nrd=0.0241666666666667
++ nrs=0.0241666666666667 sa=0 sb=0 sd=0 mult=1
+V1 net1 0 1.8
+V2 in 0 3
+**** begin user architecture code
+
+** opencircuitdesign pdks install
+.lib /foss/pdks/ihp-sg13g2/libs.tech/combined/sky130.lib.spice tt
+.param mc_mm_switch = 0
+.param mc_pr_switch = 1
+
+
+
+.option wnflag=0
+.option savecurrents
+.control
+save all
+tran 0.1n 50n
+plot in out
+op
+.endc
+
+
+**** end user architecture code
+**.ends
+.end
