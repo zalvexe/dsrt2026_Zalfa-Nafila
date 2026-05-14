@@ -1,0 +1,39 @@
+# Xschem specific ignores
+*~
+*.bak
+*.sch~
+*.sym~
+
+# Simulation outputs (Ngspice / Xschem)
+*.raw
+*.log
+*.out
+*.tr0
+*.ac0
+*.sw0
+*.vcd
+.xschem/
+.spicectrl/
+spiceinit
+
+# OS specific
+Thumbs.db
+.DS_Store
+
+# PDK Symlinks 
+LICENSE
+mips_cpu
+README.md
+scripts
+sky130_fd_pr
+sky130_fd_pr.patch
+sky130_stdcells
+sky130_tests
+stdcells
+xschem_verilog_import
+
+
+!*.sch
+!*.sym
+!*.spice
+!xschemrc
